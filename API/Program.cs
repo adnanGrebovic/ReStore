@@ -17,21 +17,25 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddCors();
 
 
 builder.Services.AddDbContext<StoreContext>(opt =>
 {
     opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
-
-
 var app = builder.Build();
 
+// builder.Services.AddCors();
+
+// app.UseCors(opt=>{
+// opt.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:5173");
+// });
 
 
 
-app.MapControllers();
+
+
+// app.MapControllers();
 
 //  var host=builder.Build();
 using var scope=app.Services.CreateScope();
@@ -49,7 +53,6 @@ DbInitializer.Initialize(context);
 logger.LogError(ex, "Problem migrating data");
  }
 
-//    app.Run();
 
 
 // Configure the HTTP request pipeline.
@@ -59,6 +62,20 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+// app.UseCors(opt=>{
+// opt.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:5173");
+// });
+
+
+builder.Services.AddCors();
+
+app.UseCors(opt=>{
+opt.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:5173");
+});
+
+
+
 
 //app.UseHttpsRedirection();
 
