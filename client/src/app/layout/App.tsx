@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { Product } from "../models/interfaces";
+import Catalog from "../../features/catalog/Catalog";
 
 
 
@@ -12,7 +13,10 @@ const [counter, setCounter] = useState(0);
 
 useEffect(()=>{
   fetch("http://localhost:5047/api/products")
-  .then(response=>response.json())
+  .then(response=> {
+    console.log(response)
+    return response.json();
+  })
   .then(data=>setProducts(data))
 },[])
 
@@ -39,12 +43,8 @@ function addProduct(){
       <div>
         
        <h1>Re-Store</h1>
-       <ul>
-        {products.map(product=>(
-          <li key={product.id}>{product.name} - {product.price}</li>
-        ))}
-       </ul>
-       <button onClick={addProduct}>Add Product</button>
+       <Catalog products={products} addProduct={addProduct}/>
+       
       </div>
       
   )

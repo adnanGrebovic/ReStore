@@ -25,19 +25,8 @@ builder.Services.AddDbContext<StoreContext>(opt =>
 });
 var app = builder.Build();
 
-// builder.Services.AddCors();
-
-// app.UseCors(opt=>{
-// opt.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:5173");
-// });
 
 
-
-
-
-// app.MapControllers();
-
-//  var host=builder.Build();
 using var scope=app.Services.CreateScope();
  var context=scope.ServiceProvider.GetRequiredService<StoreContext>();
  var logger=scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
@@ -63,9 +52,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// app.UseCors(opt=>{
-// opt.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:5173");
-// });
+
 
 
 builder.Services.AddCors();
@@ -84,6 +71,8 @@ var summaries = new[]
     "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
 };
 
+app.UseRouting();
+
 app.MapGet("/weatherforecast", () =>
 {
     var forecast =  Enumerable.Range(1, 5).Select(index =>
@@ -98,6 +87,9 @@ app.MapGet("/weatherforecast", () =>
 })
 .WithName("GetWeatherForecast")
 .WithOpenApi();
+
+// app.MapControllers();
+app.MapDefaultControllerRoute();
 
 app.Run();
 
