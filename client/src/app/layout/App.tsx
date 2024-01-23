@@ -15,7 +15,7 @@ const [counter, setCounter] = useState(0);
 useEffect(()=>{
   fetch("http://localhost:5047/api/products")
   .then(response=> {
-    console.log(response)
+    // console.log(response)
     return response.json();
   })
   .then(data=>setProducts(data))
@@ -31,7 +31,7 @@ function addProduct(){
    name: "NOVI PROIZVOD",
    description: "",
    price: counter,
-   pictureUrl: "",
+   pictureUrl: "http://picsum.photos/200",
    type: "",
    brand: "",
    quantityInStock: 0

@@ -14,7 +14,7 @@ var products=new List<Product>
                     Description =
                         "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
                     Price = 20000,
-                    PictureUrl = "client/public/images/clouds-cloudy-countryside-236047.jpg",
+                    PictureUrl = "/images/product/clouds-cloudy-countryside-236047.jpg",
                     Brand = "Angular",
                     Type = "Boards",
                     QuantityInStock = 100
@@ -24,7 +24,7 @@ var products=new List<Product>
                     Name = "Green Angular Board 3000",
                     Description = "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
                     Price = 15000,
-                    PictureUrl = "client/public/images/download (1).jpeg",
+                    PictureUrl = "/images/product/download (1).jpeg",
                     Brand = "Angular",
                     Type = "Boards",
                     QuantityInStock = 100
@@ -35,7 +35,7 @@ var products=new List<Product>
                     Description =
                         "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
                     Price = 18000,
-                    PictureUrl = "client/public/images/download (2).jpeg",
+                    PictureUrl = "/images/product/download (2).jpeg",
                     Brand = "NetCore",
                     Type = "Boards",
                     QuantityInStock = 100
@@ -46,7 +46,7 @@ var products=new List<Product>
                     Description =
                         "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
                     Price = 30000,
-                    PictureUrl = "client/public/images/download (3).jpeg",
+                    PictureUrl = "/images/product/download (3).jpeg",
                     Brand = "NetCore",
                     Type = "Boards",
                     QuantityInStock = 100
@@ -57,7 +57,7 @@ var products=new List<Product>
                     Description =
                         "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
                     Price = 25000,
-                    PictureUrl = "client/public/images/download.jpeg",
+                    PictureUrl = "/images/product/download.jpeg",
                     Brand = "React",
                     Type = "Boards",
                     QuantityInStock = 100
@@ -68,7 +68,7 @@ var products=new List<Product>
                     Description =
                         "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
                     Price = 12000,
-                    PictureUrl = "client/public/images/OIP (1).jpeg",
+                    PictureUrl = "/images/product/OIP (1).jpeg",
                     Brand = "TypeScript",
                     Type = "Boards",
                     QuantityInStock = 100
@@ -79,7 +79,7 @@ var products=new List<Product>
                     Description =
                         "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
                     Price = 1000,
-                    PictureUrl = "client/public/images/OIP (2).jpeg",
+                    PictureUrl = "/images/product/OIP (2).jpeg",
                     Brand = "NetCore",
                     Type = "Hats",
                     QuantityInStock = 100
@@ -90,7 +90,7 @@ var products=new List<Product>
                     Description =
                         "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
                     Price = 8000,
-                    PictureUrl = "client/public/images/OIP (3).jpeg",
+                    PictureUrl = "/images/product/OIP (3).jpeg",
                     Brand = "React",
                     Type = "Hats",
                     QuantityInStock = 100
@@ -101,7 +101,7 @@ var products=new List<Product>
                     Description =
                         "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
                     Price = 1500,
-                    PictureUrl = "client/public/images/OIP (4).jpeg",
+                    PictureUrl = "/images/product/OIP (4).jpeg",
                     Brand = "React",
                     Type = "Hats",
                     QuantityInStock = 100
@@ -112,7 +112,7 @@ var products=new List<Product>
                     Description =
                         "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
                     Price = 1800,
-                    PictureUrl = "client/public/images/OIP (5).jpeg",
+                    PictureUrl = "/images/product/OIP (5).jpeg",
                     Brand = "VS Code",
                     Type = "Gloves",
                     QuantityInStock = 100
@@ -123,7 +123,7 @@ var products=new List<Product>
                     Description =
                         "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
                     Price = 1500,
-                    PictureUrl = "client/public/images/OIP (6).jpeg",
+                    PictureUrl = "/images/product/OIP (6).jpeg",
                     Brand = "VS Code",
                     Type = "Gloves",
                     QuantityInStock = 100
@@ -134,7 +134,7 @@ var products=new List<Product>
                     Description =
                         "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
                     Price = 1600,
-                    PictureUrl = "client/public/images/OIP (7).jpeg",
+                    PictureUrl = "/images/product/OIP (7).jpeg",
                     Brand = "React",
                     Type = "Gloves",
                     QuantityInStock = 100
@@ -145,7 +145,7 @@ var products=new List<Product>
                     Description =
                         "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
                     Price = 1400,
-                    PictureUrl = "client/public/images/OIP (8).jpeg",
+                    PictureUrl = "/images/product/OIP (8).jpeg",
                     Brand = "React",
                     Type = "Gloves",
                     QuantityInStock = 100
@@ -156,7 +156,7 @@ var products=new List<Product>
                     Description =
                         "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
                     Price = 25000,
-                    PictureUrl = "client/public/images/OIP (9).jpeg",
+                    PictureUrl = "/images/product/OIP (9).jpeg",
                     Brand = "Redis",
                     Type = "Boots",
                     QuantityInStock = 100
@@ -167,7 +167,7 @@ var products=new List<Product>
                     Description =
                         "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
                     Price = 18999,
-                    PictureUrl = "client/public/images/OIP (10).jpeg",
+                    PictureUrl = "/images/product/OIP (10).jpeg",
                     Brand = "NetCore",
                     Type = "Boots",
                     QuantityInStock = 100
@@ -178,7 +178,7 @@ var products=new List<Product>
                     Description =
                         "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
                     Price = 19999,
-                    PictureUrl = "client/public/images/OIP (11).jpeg",
+                    PictureUrl = "/images/product/OIP (11).jpeg",
                     Brand = "NetCore",
                     Type = "Boots",
                     QuantityInStock = 100
@@ -188,7 +188,7 @@ var products=new List<Product>
                     Name = "Angular Purple Boots",
                     Description = "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
                     Price = 15000,
-                    PictureUrl = "client/public/images/OIP.jpeg",
+                    PictureUrl = "/images/product/OIP.jpeg",
                     Brand = "Angular",
                     Type = "Boots",
                     QuantityInStock = 100
@@ -199,7 +199,7 @@ var products=new List<Product>
                     Description =
                         "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
                     Price = 18000,
-                    PictureUrl = "client/public/images/R.jpeg",
+                    PictureUrl = "/images/product/R.jpeg",
                     Brand = "Angular",
                     Type = "Boots",
                     QuantityInStock = 100
