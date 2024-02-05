@@ -23,15 +23,15 @@ if (!product) return <h3>Product not found</h3>
     return(
         <Grid container spacing={6}>
             <Grid item xs={6}>
-                <img src={product.pictureUrl} alt={product.name} style={{width:'100%'}}/>
+                <img src={product.pictureUrl} alt={product.name} style={{width:'100%', paddingRight:15}}/>
             </Grid>
             <Grid xs={6}>
-                <Typography variant='h3'>{product.name}</Typography>
+                <Typography variant='h3' style={{padding:15}}>{product.name}</Typography>
                 <Divider sx={{mb:2}}/>
                 <Typography variant='h4' color='secondary'>${(product.price/100).toFixed(2)}</Typography>
                 <TableContainer>
                     <Table>
-                        <TableBody>
+                        <TableBody style={{paddingRight:15}}>
                             <TableRow>
                                 <TableCell>Name</TableCell>
                                 <TableCell>{product.name}</TableCell>
