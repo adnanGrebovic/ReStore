@@ -5,6 +5,8 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import ProductList from "./ProductList";
 import { useState, useEffect } from "react";
+import Agent from "../../app/api/agent";
+import LoadingComponent from "../../app/layout/LoadingComponent";
 
 
 
@@ -12,17 +14,16 @@ import { useState, useEffect } from "react";
 
 export default function Catalog(){
     const [products, setProducts]=useState<Product[]>([]);
+    const[Loading, setLoading]=useState(true);
 
 useEffect(()=>{
-  fetch("http://localhost:5047/api/Products")
-  .then(response=> {
-    // console.log(response)
-    return response.json();
-  })
-  .then(data=>setProducts(data))
+  Agent.Catalog.list()
+  .then(products => setProducts(products)) 
+  .catch(error=>console.log(error))
+  .finally(()=>setLoading(false)) 
 },[])
 
-
+if(Loading) return <LoadingComponent message="Loading products..."/>
 
     return(
         <>

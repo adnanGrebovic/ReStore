@@ -1,14 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './app/layout/App.tsx'
 import './app/layout/styles.css'
-import { BrowserRouter } from 'react-router-dom'
-
+import { RouterProvider } from 'react-router-dom'
+import { Router } from './app/Router/Router.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <BrowserRouter>
-        <App />
-    </BrowserRouter>
+    <RouterProvider router={Router}/>
   </React.StrictMode>,
 )

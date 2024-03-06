@@ -1,4 +1,5 @@
 using API.Data;
+using API.Middleware;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -24,7 +25,6 @@ builder.Services.AddDbContext<StoreContext>(opt =>
     opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 var app = builder.Build();
-
 
 
 using var scope=app.Services.CreateScope();
@@ -56,6 +56,10 @@ if (app.Environment.IsDevelopment())
 
 
 builder.Services.AddCors();
+
+
+app.UseMiddleware<ExceptionMiddleware>();
+
 
 app.UseCors(opt=>{
 opt.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:5173");
