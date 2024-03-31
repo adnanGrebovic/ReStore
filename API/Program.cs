@@ -3,10 +3,8 @@ using API.Middleware;
 using Microsoft.EntityFrameworkCore;
 
 
+
 var builder = WebApplication.CreateBuilder(args);
-
-
-
 
 
 
@@ -62,7 +60,7 @@ app.UseMiddleware<ExceptionMiddleware>();
 
 
 app.UseCors(opt=>{
-opt.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:5173");
+opt.AllowAnyHeader().AllowAnyMethod().AllowCredentials().WithOrigins("http://localhost:5173");
 });
 
 
