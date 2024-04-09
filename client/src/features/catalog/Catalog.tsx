@@ -1,29 +1,27 @@
-import { Product } from "../../app/models/interfaces";
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import ProductList from "./ProductList";
-import { useState, useEffect } from "react";
-import Agent from "../../app/api/agent";
+import { useEffect } from "react";
 import LoadingComponent from "../../app/layout/LoadingComponent";
+import { useAppDispatch, useAppSelector } from "../../app/store/ConfigureStore";
+import { fetchProductsAsync, productSelectors } from "./catalogSlice";
 
 
 
 
 
 export default function Catalog(){
-    const [products, setProducts]=useState<Product[]>([]);
-    const[Loading, setLoading]=useState(true);
+    const products= useAppSelector(productSelectors.selectAll);
+    const{productsLoaded, status}=useAppSelector(state=>state.catalog);
+    const dispatch=useAppDispatch();
 
 useEffect(()=>{
-  Agent.Catalog.list()
-  .then(products => setProducts(products)) 
-  .catch(error=>console.log(error))
-  .finally(()=>setLoading(false)) 
-},[])
+  if(!productsLoaded) dispatch(fetchProductsAsync());
+},[productsLoaded, dispatch])
 
-if(Loading) return <LoadingComponent message="Loading products..."/>
+if(status.includes("pending")) return <LoadingComponent message="Loading products..."/>
 
     return(
         <>

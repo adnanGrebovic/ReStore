@@ -36,7 +36,7 @@ public class BasketController : BaseApiController
             if(basket==null) basket = CreateBasket();
 
             var product=await Context.Products.FindAsync(productId);
-            if(product==null) return NotFound();
+            if(product==null) return BadRequest(new ProblemDetails{Title="Product Not Found"});
 
             basket.AddItem(product, quantity);
             var result=await Context.SaveChangesAsync()>0;
