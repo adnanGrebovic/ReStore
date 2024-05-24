@@ -1,7 +1,13 @@
+using System.Text;
 using API.Data;
+using API.Entities;
 using API.Middleware;
+using API.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
 using Microsoft.EntityFrameworkCore;
-
+using Microsoft.IdentityModel.Tokens;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,21 +24,58 @@ builder.Services.AddSwaggerGen();
 
 
 
+
 builder.Services.AddDbContext<StoreContext>(opt =>
 {
     opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+
+
+builder.Services.AddCors();
+
+
+
+builder.Services.AddIdentity<User, IdentityRole>(opt=>{
+    opt.User.RequireUniqueEmail=true;
+})
+.AddEntityFrameworkStores<StoreContext>();
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(opt=>
+        {
+            opt.TokenValidationParameters= new TokenValidationParameters
+            {
+                ValidateIssuer= false,
+                ValidateAudience= false,
+                ValidateLifetime= true,
+                ValidateIssuerSigningKey= true,
+                IssuerSigningKey= new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWTSettings:TokenKey"]))
+            };
+        }
+    );
+
+builder.Services.AddAuthorization();
+
+
+    builder.Services.AddScoped<TokenService>();
+
+
+
 var app = builder.Build();
+
 
 
 using var scope=app.Services.CreateScope();
  var context=scope.ServiceProvider.GetRequiredService<StoreContext>();
+ var userManager=scope.ServiceProvider.GetRequiredService<UserManager<User>>();
  var logger=scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
 
 
+
+
  try{
-context.Database.Migrate();
-DbInitializer.Initialize(context);
+await context.Database.MigrateAsync();
+await DbInitializer.Initialize(context, userManager);
 
  }
 
@@ -40,6 +83,9 @@ DbInitializer.Initialize(context);
 logger.LogError(ex, "Problem migrating data");
  }
 
+
+
+app.UseMiddleware<ExceptionMiddleware>();
 
 
 // Configure the HTTP request pipeline.
@@ -51,12 +97,7 @@ if (app.Environment.IsDevelopment())
 }
 
 
-
-
-builder.Services.AddCors();
-
-
-app.UseMiddleware<ExceptionMiddleware>();
+app.UseRouting();
 
 
 app.UseCors(opt=>{
@@ -65,15 +106,22 @@ opt.AllowAnyHeader().AllowAnyMethod().AllowCredentials().WithOrigins("http://loc
 
 
 
+app.UseAuthentication();
+app.UseAuthorization();
 
-//app.UseHttpsRedirection();
+
+
+
+// app.UseHttpsRedirection();
 
 var summaries = new[]
 {
     "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
 };
 
-app.UseRouting();
+// app.UseRouting();
+
+
 
 app.MapGet("/weatherforecast", () =>
 {
@@ -93,9 +141,20 @@ app.MapGet("/weatherforecast", () =>
 app.MapControllers();
 app.MapDefaultControllerRoute();
 
-app.Run();
+await app.RunAsync();
 
 record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
 {
     public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
 }
+
+
+
+
+
+
+
+
+
+
+
