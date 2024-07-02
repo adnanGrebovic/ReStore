@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xuAh6CzDvHzLKFQlWiUPfToPRXi1Kqr2kUB/p8a1P7M/pEnMcn7iX4UkDpqWOdNYjB3ruMXYUCoF++GThsi9jw==",
+  "dgSpecHash": "1ujDYyMxEgPvkwBFIj/FqMGDc8DNDihu663G6I7+EvLc5SMjeJfVkGEfH9I5+7OlFu/D6smMqzBIgBo+ZbTnRA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\adnan\\ReStore\\API\\API.csproj",
+  "projectFilePath": "C:\\Users\\adnan\\ReStore\\api\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\adnan\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\adnan\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.4\\microsoft.aspnetcore.authentication.jwtbearer.8.0.4.nupkg.sha512",

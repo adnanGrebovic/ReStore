@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\adnan\\ReStore\\API\\API.csproj": {}
+    "C:\\Users\\adnan\\ReStore\\api\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\adnan\\ReStore\\API\\API.csproj": {
+    "C:\\Users\\adnan\\ReStore\\api\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\adnan\\ReStore\\API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\adnan\\ReStore\\api\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\adnan\\ReStore\\API\\API.csproj",
+        "projectPath": "C:\\Users\\adnan\\ReStore\\api\\API.csproj",
         "packagesPath": "C:\\Users\\adnan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\adnan\\ReStore\\API\\obj\\",
+        "outputPath": "C:\\Users\\adnan\\ReStore\\api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\adnan\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -84,7 +84,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.105/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.106/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
