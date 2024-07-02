@@ -10,7 +10,7 @@ interface Props{
 
 
 export default function AppPagination({metaData, onPageChnage}:Props) {
-    const{currentPage, totalCount, totalPage, pageSize}=metaData;
+    const{currentPage, totalCount, pageSize}=metaData;
     return (
         <Box display='flex' justifyContent='space-between' alignItems='center'>
             <Typography>Displaying {(currentPage-1)*pageSize+1}-{currentPage*pageSize>totalCount ? totalCount: currentPage*pageSize} of {totalCount} items.</Typography>

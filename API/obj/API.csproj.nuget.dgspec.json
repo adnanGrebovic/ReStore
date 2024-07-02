@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\adnan\\Desktop\\ReStore\\API\\API.csproj": {}
+    "C:\\Users\\adnan\\Desktop\\ReStore-Main\\ReStore\\API\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\adnan\\Desktop\\ReStore\\API\\API.csproj": {
+    "C:\\Users\\adnan\\Desktop\\ReStore-Main\\ReStore\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\adnan\\Desktop\\ReStore\\API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\adnan\\Desktop\\ReStore-Main\\ReStore\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\adnan\\Desktop\\ReStore\\API\\API.csproj",
+        "projectPath": "C:\\Users\\adnan\\Desktop\\ReStore-Main\\ReStore\\API\\API.csproj",
         "packagesPath": "C:\\Users\\adnan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\adnan\\Desktop\\ReStore\\API\\obj\\",
+        "outputPath": "C:\\Users\\adnan\\Desktop\\ReStore-Main\\ReStore\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\adnan\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -38,6 +38,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.0, )"
